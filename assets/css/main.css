@@ -148,6 +148,7 @@ input, select, textarea {
 
 	h6 {
 		text-align: justify;
+		color: black;
 	}
 
 
@@ -2197,7 +2198,7 @@ input, select, textarea {
 
 /* Wide */
 
-	@media screen and (min-width: 961px) and (max-width: 1880px) {
+	@media screen and (min-width: 961px) and (max-width: 2000px) {
 
 		/* Basic */
 

@@ -1,452 +1,336 @@
-<!-- From Jacek portfolio Template -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roberto's Portfolio</title>
+  <head>
+    <!-- Metadata -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Roberto Alfaro — Ethical Hacker & Pen‑Test Specialist</title>
+    <meta name="description" content="Ethical hacker specialising in API, Mobile & Active Directory penetration testing. I find the bugs before attackers do." />
+    <link rel="canonical" href="/en/" />
+    <link rel="alternate" hreflang="es" href="/es/" />
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/all.min.css">
-
-</head>
-<body>
-    <header>
-        <!--
-        <div id="sound">
-            <audio id="myAudio">
-                <source src="./Night.mp3">
-            </audio>
-            <i class="fab fa-soundcloud sound-cloud"></i>
-            <span>Sound</span>
-            <div class="on-off">
-                <span id="off">OFF</span>
-                <span id="on">On</span>
-            </div>
-        </div>
-        <div class="btns-container">
-            <i class="fas fa-bars bars"></i>
-            <i class="fas fa-times times"></i>
-        </div>-->
+    <!-- TailwindCSS CDN (for quick prototyping) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-oBwz+gqY+YuxkmiYpAo0P5NdE0XzaKzbLW9xX0B+L6fW7ZXNn0DXsLblHnXSfouxYAVmqHA5Y4R0HsIhiOpFQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <style>
+        .skill-dot{
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 9999px;
+            box-shadow: 0 0 0 2px #a1a1aa;
+            display: inline-block;
+            transition: transform 200ms ease-in-out,
+                        box-shadow 200ms ease-in-out;
+        }
+        .skill-dot.filled{
+            background-color: #2dd4bf;
+            box-shadow: 0 0 0 2px #5eead4;
+        }S
+        .skill-dot:hover{
+            transform: scale(1.10);
+            box-shadow: 0 0 0 2px #2dd4bf;
+        }
+    </style>
+  </head>
+  <body class="bg-zinc-900 text-slate-100 antialiased">
+    <!-- ===== Header / Navigation ===== -->
+    <header class="fixed z-30 w-full bg-zinc-900/80 backdrop-blur-lg shadow-md">
+      <div class="container mx-auto flex items-center justify-between px-6 py-4 md:px-10">
+        <a href="#home" class="flex items-center space-x-2 font-bold text-teal-400 hover:text-teal-300">
+          <img src="/images/VLogo.jpg" alt="Vuldar logo" class="h-10 w-10 rounded" />
+          <span>Vuldar</span>
+        </a>
+        <nav class="hidden space-x-8 md:flex">
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#blog" class="nav-link">Blog</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#contact" class="nav-link">Contact</a>
+          <a href="/es/" class="nav-link">ES</a>
+        </nav>
+        <button id="menuToggle" aria-label="Open Menu" class="text-xl md:hidden">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+      <!-- Mobile nav -->
+      <div id="mobileMenu" class="hidden flex-col space-y-4 bg-zinc-800 px-6 py-4 md:hidden">
+        <a href="#services" class="mobile-link">Services</a>
+        <a href="#blog" class="mobile-link">Blog</a>
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+        <a href="/es/" class="mobile-link">ES</a>
+      </div>
     </header>
 
-    <!-- Side -->
-    <aside class="aside">
-        <div class="aside-wrapper">
-            <div class="logo-section">
-                <a class="logo" rel="home" href="#">
-                    <img src="images/VLogo.jpg" style="width: 120px;"
-                     alt="logo">
-                    <span style="padding-top: 10%;">Roberto</span>
-                </a>
-                <span>Computer scientist</span>
-            </div>
-
-            <nav class="nav-links">
-                <a href="https://rlalfaro.github.io/"><i class="fas fa-id-badge" style="padding-right: 5%;"></i>About</a>
-                <a href="#main-tools"><i class="fas fa-keyboard" style="padding-right: 5%;"></i>Main Tools & Skills</a>
-                <a href="Services.html"><i class="fas fa-desktop" style="padding-right: 5%;"></i>Vuldar Services</a>
-                <a href="https://robertos-notebook.gitbook.io/cybersecurity"><i class="fas fa-book" style="padding-right: 5%;"></i>GitBook</a>
-                <a href="#ContactMe"><i class="fas fa-paper-plane" style="padding-right: 5%;"></i>Contact</a>
-            </nav>
-            <!-- SocialMedia -->
-            <ul class="social-icons">
-                <li>
-                    <a href="https://www.linkedin.com/in/roberto-alfaro-ibanez/">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/RLAlfaro">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.facebook.com/Tartox">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </aside>
-
-    <!-- Main Page -->
-    <section id="section-home" class="section-home">
-        <div class="text-zone">
-            <h1>Hi, <br> I'm Roberto Alfaro, <br> Computer Scientist
-            </h1>
-            <p class="gray-text">Industrial Engineer / Data Analyst / Certified Ethical Hacker</p><br>
-            <a class="gray-text" href="add/CV_RALFARO.pdf" target="_blank">You can see my curriculum here</a>
-            <br>
-
-                <!-- contact button -->
-            <a href="#" class="contact-button">
-                <div>
-                    <span class="bg"></span>
-                    <span class="base"></span>
-                    <span class="text">
-                        Contact me!
-                    </span>
-                </div>
+    <main class="pt-24" id="home">
+      <!-- ===== HERO ===== -->
+      <section class="container mx-auto flex flex-col items-start px-6 py-24 md:flex-row md:items-center md:justify-between md:px-10">
+        <div class="max-w-xl space-y-6">
+          <h1 class="text-4xl font-extrabold leading-tight tracking-tight md:text-6xl">
+            Hi, I'm <span class="text-teal-400">Roberto Alfaro</span>.<br />
+            Ethical Hacker.
+          </h1>
+          <p class="text-lg text-slate-300 md:text-xl">
+            I uncover critical vulnerabilities in your APIs, mobile apps and Active Directory environments <em>before attackers do</em>. Exploit‑ready reports delivered in less than&nbsp;7&nbsp;days.
+          </p>
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="#contact" class="relative inline-flex items-center overflow-hidden rounded bg-teal-500 px-6 py-3 font-medium shadow-lg transition hover:bg-teal-400">
+              <span class="relative z-10">Request a scoping call</span>
             </a>
+            <a href="/add/CV_RALFARO.pdf" target="_blank" class="text-teal-300 hover:underline">
+              View résumé
+            </a>
+          </div>
         </div>
-
-        <!-- Main Page Scroll Down -->
-        <div class="scroll-down">
-            <span>scroll down</span>
-            <i class="fas fa-arrow-down"></i>
+        <!-- Hero Illustration -->
+        <div>
+          <img src="/images/hackergif.gif" alt="Illustration of a hacker reviewing code" class="w-full" />
         </div>
-
-        <div class="scroll-down scroll-down--left">
-            <span>scroll down</span>
-            <i class="fas fa-arrow-down"></i>
-        </div>
-    </section>
-
-    <!-- About Me and Tools  -->
-    <section id="main-tools">
-        <div id="header">
-            <h2>Main Tools</h2>
-        </div>
-        <div class="text-zone-2">
-            <div>
-                <p>Hello, I am Roberto Alfaro, an Industrial Engineer, Data Analyst and Certified Ethical Hacker from Chile.
-                    I have been working for four years as a Data Analyst as my official current job, but I have been interested in Ethical Hacking for a long time, practicing every night. 
-                    At this momment I am studying to get the OSCP Certification.
-                    Currently I am giving services as Data Analyst and Pentester for API and Active Directory Attacks.
-                    <br>
-                    Interested to see some more? Visit <a href="https://rlalfaro.github.io/services.html">My Services</a> page.
-                </p>
+      </section>
+       <!-- ===== SKILLS ===== -->
+      <section id="skills" class="bg-zinc-800/50 py-20">
+        <div class="container mx-auto px-6 md:px-10">
+          <h2 class="mb-12 text-center text-3xl font-bold md:text-4xl">Core Skills</h2>
+          <div class="grid gap-12 md:grid-cols-2">
+            <!-- Skill Row Template -->
+            <div class="flex items-center space-x-6">
+              <span class="w-32 font-semibold uppercase tracking-wide">Python & Automation</span>
+                <img src="/images/Icon1.png" class="flex h-12 w-12 items-center justify-center border-2 border-slate-100 text-xs font-bold"/>
+              <div class="flex space-x-3">
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+              </div>
             </div>
-        </div>
-        <div class="fake-big-2">Work</div>
-    </section>
-
-    <!-- Tool Section-->
-    <div id="home-magicwall Skills" class="fake-magicwall" style="padding-right:5%;">
-        <ul>
-            <!-- Tools with URLs -->
-            <li>
-                <div class="magic-wall_item lazyload" id="modal1">
-                    <img src="images/Tool1-Excel.png" alt="image">
-                    <div class="hover-content"></div>
-                    <a href="Tool-MSExcel.html" class="colorbox"></a>
-                </div>
-            </li>
-            <li>
-                <div class="magic-wall_item lazyload" >
-                    <img src="images/Tool2-PowerBI.jpeg" alt="image">
-                    <div class="hover-content"></div>
-                    <a href="Tool-PowerBI.html" class="colorbox"></a>
-                </div>
-            </li>
-            <li>
-                <div class="magic-wall_item lazyload">
-                    <img src="images/Tool3-Python.png" alt="image">
-                    <div class="hover-content"></div>
-                    <a href="https://github.com/RLAlfaro/Data-Science-Certificate" class="colorbox"></a>
-                </div>
-            </li>
-            <li>
-                <div class="magic-wall_item lazyload">
-                    <img src="images/Tool4-R.png" alt="image">
-                    <div class="hover-content"></div>
-                    <a href="#" class="colorbox"></a>
-                </div>
-            </li>
-            <li>
-                <div class="magic-wall_item lazyload">
-                    <img src="images/Tool5-Kali.jpeg" alt="image">
-                    <div class="hover-content"></div>
-                    <a href="Tool-Hacking.html" class="colorbox"></a>
-                </div>
-            </li>
-            <!-- Tools without URLs -->
-            <li>
-                <div class="magic-wall_item lazyload">
-                    <img src="images/Sub1-Nmap.jpg" alt="image">
-                    <div class="hover-content"></div>
-                </div>
-            </li>
-            <li>
-                <div class="magic-wall_item lazyload">
-                    <img src="images/Sub2-Burpsuite.jpg" alt="image">
-                    <div class="hover-content"></div>
-                </div>
-            </li>
-            <li>
-                <div class="magic-wall_item lazyload">
-                    <img src="images/Sub3-Postman.jpg" alt="image">
-                    <div class="hover-content"></div>
-                </div>
-            </li>
-            <li>
-                <div class="magic-wall_item lazyload">
-                    <img src="images/Sub4-Owasp.jpg" alt="image">
-                    <div class="hover-content"></div>
-                </div>
-            </li>
-            <li>
-                <div class="magic-wall_item lazyload">
-                    <img src="images/Sub5-Metasploit.jpg" alt="image">
-                    <div class="hover-content"></div>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <section id="section-about">
-
-        <div class="text-zone3">
-            <div id="header">
-                <h2>About me</h2>
+            <div class="flex items-center space-x-6">
+              <span class="w-32 font-semibold uppercase tracking-wide">Burp Suite & Web Exploit</span>
+              <img src="/images/Icon2.png" class="flex h-12 w-12 items-center justify-center border-2 border-slate-100 text-xs font-bold"/>
+              <div class="flex space-x-3">
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+              </div>
             </div>
+            <div class="flex items-center space-x-6">
+              <span class="w-32 font-semibold uppercase tracking-wide">Network Discovery</span>
+              <img src="/images/Icon3.png" class="flex h-12 w-12 items-center justify-center border-2 border-slate-100 text-xs font-bold"/>
+              <div class="flex space-x-3">
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+              </div>
+            </div>
+            <div class="flex items-center space-x-6">
+              <span class="w-32 font-semibold uppercase tracking-wide">API Security</span>
+              <img src="/images/Icon4.png" class="flex h-12 w-12 items-center justify-center border-2 border-slate-100 text-xs font-bold"/>
+              <div class="flex space-x-3">
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot"></span>
+              </div>
+            </div>
+            <div class="flex items-center space-x-6">
+              <span class="w-32 font-semibold uppercase tracking-wide">Active Directory</span>
+              <img src="/images/Icon5.png" class="flex h-12 w-12 items-center justify-center border-2 border-slate-100 text-xs font-bold"/>
+              <div class="flex space-x-3">
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot"></span>
+              </div>
+            </div>
+            <div class="flex items-center space-x-6">
+              <span class="w-32 font-semibold uppercase tracking-wide">Metasploit & Post-Exploit</span>
+              <img src="/images/Icon6.png" class="flex h-12 w-12 items-center justify-center border-2 border-slate-100 text-xs font-bold"/>
+              <div class="flex space-x-3">
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot"></span>
+                <span class="skill-dot"></span>
+              </div>
+            </div>
+            <div class="flex items-center space-x-6">
+              <span class="w-32 font-semibold uppercase tracking-wide">Cloud Security (AWS/GCP/Azure)</span>
+              <img src="/images/Icon7.png" class="flex h-12 w-12 items-center justify-center border-2 border-slate-100 text-xs font-bold"/>
+              <div class="flex space-x-3">
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot"></span>
+                <span class="skill-dot"></span>
+              </div>
+            </div>
+            <div class="flex items-center space-x-6">
+              <span class="w-32 font-semibold uppercase tracking-wide">Container Security (Docker/K8s)</span>
+              <img src="/images/Icon8.png" class="flex h-12 w-12 items-center justify-center border-2 border-slate-100 text-xs font-bold"/>
+              <div class="flex space-x-3">
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot filled"></span>
+                <span class="skill-dot"></span>
+                <span class="skill-dot"></span>
+                <span class="skill-dot"></span>
+              </div>
+            </div>  
+          </div>
+        </div>
+      </section>
+      <!-- ===== SERVICES ===== -->
+      <section id="services" class="py-20">
+        <div class="container mx-auto px-6 md:px-10">
+          <h2 class="mb-12 text-center text-3xl font-bold md:text-4xl">Pen‑Testing Services</h2>
+          <div class="grid gap-8 md:grid-cols-3">
+            <!-- Card 1 -->
+            <div class="group relative rounded-xl bg-zinc-900 p-8 shadow-lg ring-1 ring-zinc-700">
+              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-teal-500/20 text-teal-400">
+                <i class="fa fa-code"></i>
+              </div>
+              <h3 class="mb-3 text-xl font-semibold">API & Web Services</h3>
+              <p class="text-slate-400">
+                I perform a full-stack security review of your REST or GraphQL endpoints mapped to the latest OWASP API Top 10 risks (Broken Object-Level Authorization, Mass Assignment, Excessive Data Exposure, etc.). Each finding includes:
+              </p>
+              <p class="text-slate-400">1. Controlled Proof-of-Concept exploit</p>
+              <p class="text-slate-400">2. Impact analysis & fix guidance</p>
+              <p class="text-slate-400">3. Validation scripts for pipelines</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="group relative rounded-xl bg-zinc-900 p-8 shadow-lg ring-1 ring-zinc-700">
+              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-teal-500/20 text-teal-400">
+                <i class="fa fa-mobile"></i>
+              </div>
+              <h3 class="mb-3 text-xl font-semibold">Mobile Pentesting</h3>
+              <p class="text-slate-400">
+                Static & dynamic analysis for iOS and Android following OWASP MASVS. Reproducible evidence included, The engagement covers:
+              </p>
+              <p class="text-slate-400">1. Static analysis (SAST), reverse-engineering of the .apk / .ipa</p>
+              <p class="text-slate-400">2. Dynamic & runtime testing (DAST), on-device assessment with instrumentation</p>
+              <p class="text-slate-400">3. Back-end linkage, any server-side issues discovered via the mobile client</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="group relative rounded-xl bg-zinc-900 p-8 shadow-lg ring-1 ring-zinc-700">
+              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-teal-500/20 text-teal-400">
+                <i class="fa fa-network-wired"></i>
+              </div>
+              <h3 class="mb-3 text-xl font-semibold">Active Directory</h3>
+              <p class="text-slate-400">
+                I audit your Windows domain end-to-end to surface privilege-escalation chains and misconfigurations that attackers exploit during ransomware and lateral-movement campaigns. The engagement includes:
+              </p>
+                <p class="text-slate-400">1. Domain reconnaissance & graph mapping</p>
+                <p class="text-slate-400">2. Exploitation simulation</p>
+                <p class="text-slate-400">3. Defence-evasion & detection review</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <p>Industrial Civil Engineer enthusiastic about cybersecurity, currently holding the CEH certificate and studying for the OSCP. 
-                I love learning about various development topics and researching deep to find different ways to achieve a goal.<br><br>
-                Nowadays, I provide freelance pentester services, mainly for developing APIs and active directory environments, 
-                with the aim of becoming more familiar with real-world scenarios.
-                <br><br>
-                <a href="add/Certificates.pdf" target="_blank">You can see my main certificates here</a><br><br><br><br>
-                
+      <!-- ===== BLOG ===== -->
+      <section id="blog" class="bg-zinc-800/50 py-20">
+        <div class="container mx-auto px-6 md:px-10">
+          <h2 class="mb-12 text-center text-3xl font-bold md:text-4xl">Latest Articles</h2>
+          <div class="grid gap-8 md:grid-cols-3">
+            <!-- Blog cards -->
+            <article class="rounded-xl bg-zinc-900 p-6 shadow-lg ring-1 ring-zinc-700 transition hover:ring-teal-400">
+              <time class="text-sm uppercase tracking-wide text-rose-400">Red Team</time>
+              <h3 class="mt-2 text-lg font-semibold">
+                <a href="https://robertos-notebook.gitbook.io/cybersecurity/cybersecurity/tip-and-tricks/docker-container" target="_blank" class="hover:underline">Offensive Docker Container</a>
+              </h3>
+              <p class="mt-2 text-slate-400">Brief information about the Docker Container used for Red Team, an alternative to virtual machines due to its quick setup.</p>
+            </article>
+            <article class="rounded-xl bg-zinc-900 p-6 shadow-lg ring-1 ring-zinc-700 transition hover:ring-teal-400">
+              <time class="text-sm uppercase tracking-wide text-rose-400">Red Team</time>
+              <h3 class="mt-2 text-lg font-semibold">
+                <a href="https://robertos-notebook.gitbook.io/cybersecurity/cybersecurity/tip-and-tricks/custom-function" target="_blank" class="hover:underline">Bash Custom Functions</a>
+              </h3>
+              <p class="mt-2 text-slate-400">Customized functions in bash to streamline work, with pending functions to be added.</p>
+            </article>
+            <article class="rounded-xl bg-zinc-900 p-6 shadow-lg ring-1 ring-zinc-700 transition hover:ring-teal-400">
+              <time class="text-sm uppercase tracking-wide text-teal-400">Hack The Box Writeups</time>
+              <h3 class="mt-2 text-lg font-semibold">
+                <a href="https://robertos-notebook.gitbook.io/cybersecurity/hack-the-box/easy-machine" target="_blank" class="hover:underline">HTB Write‑ups</a>
+              </h3>
+              <p class="mt-2 text-slate-400">HackTheBox walkthroughs for simulations of various difficulty levels.</p>
+            </article>
+          </div>
+          <div class="mt-10 text-center">
+            <a href="https://medium.com/@roberto.alfaroib" target="_blank" class="inline-flex items-center text-teal-300 hover:underline">See all posts (Medium Profile)<i class="ml-2 fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== ABOUT ===== -->
+      <section id="about" class="py-20">
+        <div class="container mx-auto flex flex-col items-start gap-12 px-6 md:flex-row md:items-center md:px-10">
+          <div class="w-full md:w-1/2">
+            <h2 class="mb-6 text-3xl font-bold md:text-4xl">About</h2>
+            <p class="mb-4 text-slate-300">
+                Industrial Engineer turned security professional with <strong>4+ years</strong> as a Data Analyst. Certified <strong>CEH, BSCP, </strong> and holder of multiple SecOpsGroup credentials (Practical Web App Pentesting, Cloud Security Fundamentals, Threat Hunting). Currently preparing for <strong>OSCP</strong>. I’ve led 50 + API security assessments and disclosed critical vulnerabilities through Bug-Bounty programs on HackerOne, YesWeHack and Cyscope.
             </p>
-            <!--
-            <p>
-                For over a decade I had many opportunities to work in a vast spectrum of 
-                <a href="#" class="tech">web technologies</a> 
-                what let me gather a significant amount of various experience.
-                Working for companies and individuals around the globe I met and learnt 
-                from amazing and ambitious people.
-            </p>
-            <p>
-                I currently work remotely with a selected freelance client base being open 
-                for new opportunities.
-            </p> -->
+            <a href="/add/Certificates.pdf" target="_blank" class="text-teal-300 hover:underline">See certifications</a>
+            <p></p>
+            <a href="https://robertos-notebook.gitbook.io/cybersecurity" target="_blank" class="text-teal-300 hover:underline">Gitbook Blog</a>
+            <p></p>
+            <a href="https://app.hackthebox.com/users/1289875y" target="_blank" class="text-teal-300 hover:underline">Hack The Box Profile</a>
+            
+          </div>
+          <div class="w-full md:w-1/2">
+            <img src="/images/Tool5-Kali.jpeg" alt="Roberto working on security assessment" class="w-full rounded-lg" />
+          </div>
         </div>
-        <div class="skills-charts text-zone3">
-            <div id="ContactMe">
-                <div id="header">
-                    <h2>Contact</h2>
-                </div>
-                
-				<P>Thank you for contacting me, I will answer soon as possible</P>
+      </section>
 
-				<form action="https://formspree.io/xgenpgab" method="POST">
-					<div class="row">
-						<div class=" "><input type="text" name="name" placeholder="Your name" /></div>
-						<div class=" "><input type="email" name="_replyto" placeholder="Your e-mail" /></div>
-						<div class=" ">
-							<textarea name="mensaje" placeholder="Write your message here! Thank you!"></textarea>
-						</div>
-						<div class="col-12">
-							<input type="submit" value="Send Message">
-						</div>
-                    <p>
-                        <span class="fas fa-mobile-alt"></span>  Phone Number: +56 9 6694 2425 <br>
-                        <span class="fas fa-envelope"></span>  E-mail: roberto.alfaroib@gmail.com
-                    </p>
-					</div>
-				</form>
-                <!-- Disables Skill-chart
-                <canvas width="500" height="500" id="myCanvas">
-                    <ul id="tags">
-                        <li><a href="#" target="_blank">Data Science</a></li>
-                        <li><a href="#" target="_blank">Data Analyst</a></li>
-                        <li><a href="#" target="_blank">Nmap</a></li>
-                        <li><a href="#" target="_blank">TypeScript</a></li>
-                        <li><a href="#" target="_blank">REST</a></li>
-                        <li><a href="#" target="_blank">JSON</a></li>
-                        <li><a href="#" target="_blank">GSAP</a></li>
-                        <li><a href="#" target="_blank">Data Science</a></li>
-                        <li><a href="#" target="_blank">Wordpress</a></li>
-                        <li><a href="#" target="_blank">PHP</a></li>
-                        <li><a href="#" target="_blank">Python</a></li>
-                        <li><a href="#" target="_blank">Node JS</a></li>
-                        <li><a href="#" target="_blank">Git</a></li>
-                        <li><a href="#" target="_blank">_lodash</a></li>
-                        <li><a href="#" target="_blank">SASS</a></li>
-                        <li><a href="#" target="_blank">JQuery</a></li>
-                        <li><a href="#" target="_blank">SQI</a></li>
-                        <li><a href="#" target="_blank">Gulp</a></li>
-                        <li><a href="#" target="_blank">npm</a></li>
-                        <li><a href="#" target="_blank">BEM</a></li>
-                    </ul>
-                </canvas>
-                -->
+      <!-- ===== CONTACT ===== -->
+      <section id="contact" class="bg-zinc-800/50 py-20">
+        <div class="container mx-auto px-6 md:px-10">
+          <h2 class="mb-8 text-center text-3xl font-bold md:text-4xl">Contact</h2>
+          <p class="mx-auto mb-10 max-w-2xl text-center text-slate-300">
+            Ready to secure your platform or just have questions? Send me a message — I reply within 24&nbsp;hours.
+          </p>
+          <form action="https://formspree.io/f/xgenpgab" method="POST" class="mx-auto max-w-2xl space-y-6">
+            <div class="grid gap-6 md:grid-cols-2">
+              <input type="text" name="name" placeholder="Name" required class="input bg-zinc-800 p-2" />
+              <input type="email" name="email" placeholder="E‑mail" required class="input bg-zinc-800 p-2" />
             </div>
+            <textarea name="message" rows="5" placeholder="Your message…" required class="input bg-zinc-800 p-2"></textarea>
+            <button type="submit" class="w-full rounded bg-teal-500 py-3 font-medium transition hover:bg-teal-400">Send message</button>
+          </form>
+          <div class="mt-12 flex justify-center space-x-6 text-2xl social-icons">
+            <a href="https://www.linkedin.com/in/roberto-alfaro-ibanez/" class="hover:text-teal-400"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/RLAlfaro" class="hover:text-teal-400"><i class="fab fa-github"></i></a>
+            <a href="mailto:roberto.alfaroib@gmail.com" class="hover:text-teal-400"><i class="fa fa-envelope"></i></a>
+          </div>
         </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- the about section ends here -->
+    <!-- ===== Footer ===== -->
+    <footer class="bg-zinc-900 py-6 text-center text-sm text-slate-500">
+      © <span id="year"></span> Roberto Alfaro – All rights reserved.
+    </footer>
 
-    <!-- blog section starts here -->
-    <!-- BLOG SECTION -->
-        
-    <section data-load="blog" id="section-blog" class="section-full section-blog js-way">
-
-        <div class="fake-big-2">Blog</div>
-    
-        <!-- blog articles wrapper -->
-        <div class="blog-articles">
-    
-            <!-- Blog articles card 1--> 
-            <article class="post-articles" style="border-top: 2px solid#f50057">
-                <div class="post-content">
-                    <time class="post-date" style="color:#f50057;"> Red Team</time>
-                    <div class="blog-post-title">
-                        <h5>
-                            <a data-id="2354" href="https://robertos-notebook.gitbook.io/cybersecurity/cybersecurity/tip-and-tricks/docker-container">
-                                Offensive Docker Container
-                            </a>
-                        </h5>
-                    </div>
-                    <div class="blog-post-content">
-                        Brief information about the Docker Container used for Red Team, an alternative to virtual machines due to its quick setup.
-                    </div>
-                </div>
-            </article>
-
-            <!-- Blog articles card 2-->
-            <article class="post-articles" style="border-top: 2px solid #f50057;">
-                <div class="post-content">
-                    <time class="post-date" style="color:#f50057;"> Red Team</time>
-                    <div class="blog-post-title">
-                        <h5>
-                            <a data-id="2182" href="https://robertos-notebook.gitbook.io/cybersecurity/cybersecurity/tip-and-tricks/custom-function">
-                                Bash Custom Functions			
-                            </a>
-                        </h5>
-                    </div>
-                    <div class="blog-post-content">
-                        Customized functions in bash to streamline work, with pending functions to be added.	
-                    </div>
-                </div>
-            </article>
-
-            <!-- Blog articles card 3-->
-            <article class="post-articles" style="border-top: 2px solid #08fdd8;">
-                <div class="post-content">
-                    <time class="post-date" style="color: #08fdd8;">Hack the Box</time>
-                    <div class="blog-post-title">
-                        <h5>
-                            <a data-id="2113" href="https://robertos-notebook.gitbook.io/cybersecurity/hack-the-box/easy-machine">
-                                Hack the Box Writeups			
-                            </a>
-                        </h5>
-                    </div>
-                    <div class="blog-post-content">
-                        HackTheBox walkthroughs for simulations of various difficulty levels.		
-                    </div>
-                </div>
-            </article>
-    
-            <!-- Blog articles card 4-->
-            <article class="post-articles" style="border-top: 2px solid orange;">
-                <div class="post-content">
-                    <time class="post-date" style="color: orange;"> Courses</time>
-                    <div class="blog-post-title">
-                        <h5>
-                            <a data-id="2037" href="https://robertos-notebook.gitbook.io/vuldarcourses/ceh-content/ceh-disclaimer">
-                                CEH	Personal Notes
-                            </a>
-                        </h5>
-                    </div>
-                    <div class="blog-post-content">
-                        Personal notes and practical lab answers from the CEH v12 course, as the official material is not available.		
-                    </div>
-                </div>
-            </article>
-    
-            <!-- Blog articles card 5-->
-            <article class="post-articles" style="border-top: 2px solid #a40039">
-                <div class="post-content">
-                    <time class="post-date" style="color: #a40039;"> Red Team - Spanish</time>
-                    <div class="blog-post-title">
-                        <h5>
-                            <a data-id="1900" href="https://robertos-notebook.gitbook.io/vuldarconcept/enumeration/starting-point">
-                                Recon Guide			
-                            </a>
-                        </h5>
-                    </div>
-                    <div class="blog-post-content">
-                        A basic Red Team guide involves the repetitive stages of reconnaissance and soon the repetitive stages of privilege escalation.	in Spanish.	
-                    </div> 
-                </div>
-            </article>
-
-            <!-- Blog articles card 6 -->
-            <article class="post-articles" style="border-top: 2px solid #a40039;">
-                <div class="post-content">
-                    <time class="post-date" style="color:#a40039;"> Red Team - Spanish</time>
-                    <div class="blog-post-title">
-                        <h5>
-                            <a data-id="2312" href="https://robertos-notebook.gitbook.io/vuldarconcept/exploits/frecuentes">
-                                Exploit Compilation			
-                            </a>
-                        </h5>
-                    </div>
-                    <div class="blog-post-content">
-                        A compilation in Spanish of the vulnerabilities encountered in the machines, along with a basic explanation. IMPORTANT: Specific vulnerabilities will not be detailed.
-		    </div>
-    
-                </div>
-            </article>
-
-            <!-- Blog articles card 7
-            <article class="post-articles" style="border-top: 2px solid #08fdd8">
-                <div class="post-content">
-                    <time class="post-date" style="color:#08fdd8"> HTML &amp; CSS</time>
-                    <div class="blog-post-title">
-                        <h5>
-                            <a data-id="2019" href="#">
-                                How to use System Fonts in CSS to improve your site?				
-                            </a>
-                        </h5>
-                    </div>
-                    <div class="blog-post-content">
-                        How to use System Fonts in CSS to improve your site...		
-                    </div>    
-                </div>
-            </article>-->
-    
-            <!-- Blog articles card 8
-            <article class="post-articles" style="border-top: 2px solid #08fdd8">
-                <div class="post-content">
-                    <time class="post-date" style="color: #08fdd8"> HTML &amp; CSS</time>
-                    <div class="blog-post-title">
-                        <h5>
-                            <a data-id="2000" href="#">
-                                What is PostCSS and what does it do?				
-                            </a>
-                        </h5>
-                    </div>
-                    <div class="blog-post-content">
-                        PostCSS is a very popular tool that allows developers to write...		
-                    </div>
-                </div>
-            </article>-->
-
-            <!-- Blog articles card 9
-            <article class="post-articles" style="border-top:2px solid #81D8F7">
-                <div class="post-content">
-                    <time class="post-date" style="color:#81D8F7;"> Computer Science</time>
-                    <div class="blog-post-title">
-                        <h5>
-                            <a data-id="2301" href="#">
-                                Basic Concepts of Data Processing (Part 2)				
-                            </a>
-                        </h5>
-                    </div>
-                    <div class="blog-post-content">
-                        Languages, Syntax, and Semantics Now that we understand that machines work...		
-                    </div>
-                </div>
-            </article>            -->
-            </div>
-        </section>
-
-
+    <!-- ===== Scripts ===== -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="./jquery.tagcanvas.js"></script>
     <script src="index.js"></script>
-</body>
+    <script>
+      // Update year automatically
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Mobile nav toggle
+      const menuBtn = document.getElementById('menuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    </script>
+  </body>
 </html>
